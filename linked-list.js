@@ -29,11 +29,22 @@ class LinkedList {
 
   addToTail(val) {
     // Your code here 
-    // let current = this.head;
-    // while(current.next) {
-    //   current = current.next;
-    // }
+    let newNode = new LinkedListNode(val);
+
     this.length++;
+
+    if (this.head === null) {
+      this.head = newNode;
+      return this;
+    }
+    
+    // iterate through the linked list to the last node
+    let current = this.head;
+    while(current.next) {
+      current = current.next;
+    }
+
+    current.next = newNode;
     
   }
 

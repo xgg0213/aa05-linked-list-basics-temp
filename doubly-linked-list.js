@@ -45,13 +45,10 @@ class DoublyLinkedList {
       return this;
     }
 
-    let current = this.head;
-
-    while(current.next) {
-      current = current.next;
-    }
-
-    this.tail = current.next;
+    // can access the last node directly with this.tail
+    this.tail.next = newNode; // set current tail next pointer to newNode
+    newNode.prev = this.tail; // set newNode prev pointer to current tail
+    this.tail = newNode; // set tail to newNode;
     
   }
 
